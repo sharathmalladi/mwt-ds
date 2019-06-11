@@ -10,6 +10,7 @@ import_or_install('applicationinsights')
 import_or_install('psutil')
 import_or_install('azure.storage.blob')
 import_or_install('numpy')
+import_or_install('pandas')
 import argparse, json, os, psutil, sys, shutil
 from datetime import datetime
 from subprocess import check_output, STDOUT
