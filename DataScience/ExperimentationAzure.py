@@ -4,7 +4,7 @@ def import_or_install(package):
     try:
         __import__(package)
     except ImportError:
-        subprocess.check_call(["python", '-m', 'pip', 'install', 'applicationinsights'])
+        subprocess.check_call(["python3", '-m', 'pip3', 'install', 'applicationinsights'])
 
 import_or_install('applicationinsights')
 import argparse, json, os, psutil, sys, shutil
