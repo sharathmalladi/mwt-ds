@@ -7,6 +7,7 @@ def import_or_install(package):
         subprocess.check_call(["python3", '-m', 'pip', 'install', package])
 
 import_or_install('applicationinsights')
+import_or_install('psutil')
 import argparse, json, os, psutil, sys, shutil
 from datetime import datetime
 from subprocess import check_output, STDOUT
