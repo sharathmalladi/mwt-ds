@@ -8,6 +8,7 @@ def import_or_install(package):
 
 import_or_install('applicationinsights')
 import_or_install('psutil')
+import_or_install('azure.storage.blob')
 import argparse, json, os, psutil, sys, shutil
 from datetime import datetime
 from subprocess import check_output, STDOUT
