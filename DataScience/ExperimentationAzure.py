@@ -4,7 +4,7 @@ def import_or_install(package):
     try:
         __import__(package)
     except ImportError:
-        subprocess.check_call(['sudo', 'python3', '-m', 'pip', 'install', package])
+        subprocess.check_call(['python', '-m', 'pip', 'install', package])
 
 import_or_install('applicationinsights')
 import_or_install('psutil')
