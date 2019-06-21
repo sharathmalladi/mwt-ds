@@ -3,7 +3,9 @@ import subprocess
 def import_or_install(package):
     try:
         __import__(package)
+        print('Imported {}'.format(package))
     except ImportError:
+        print('Installing {}'.format(package))
         subprocess.check_call(['python3', '-m', 'pip', 'install', package])
 
 import_or_install('applicationinsights')
