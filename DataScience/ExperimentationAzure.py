@@ -19,6 +19,9 @@ def get_telemetry_client(appInsightsInstrumentationKey):
     else:
         return None
 
+def cleanup_policy_arguments(policyArgs):
+    return policyArgs.replace('--dsjson', '')
+
 def check_system():
     try:
         print('Cpu count : {}'.format(psutil.cpu_count()))
@@ -111,6 +114,8 @@ if __name__ == '__main__':
                     policyArgs = p['arguments']
                     print('Name: ' + policyName)
                     print('Command: ' + policyArgs)
+                    if '--dsjson' not in policyArgs:
+                        policyArgs += " --dsjson "
                     custom_command = "vw " + policyArgs + " -d " + output_gz_fp + " -p " + output_gz_fp + "." + policyName + ".pred"
                     try:
                         check_output(custom_command.split(' '), stderr=STDOUT)
@@ -205,7 +210,7 @@ if __name__ == '__main__':
                             for p in policy_data['policies']:
                                 summary_data['policyResults'].append({
                                     'name': p['name'],
-                                    'arguments' :p['arguments']
+                                    'arguments' : cleanup_policy_arguments(p['arguments'])
                                 })
                 except Exception as e:
                     print(e)
