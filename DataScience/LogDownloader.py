@@ -80,6 +80,7 @@ def update_progress(current, total):
     sys.stdout.flush()
 
 def download_container(app_id, log_dir, container=None, conn_string=None, account_name=None, sas_token=None, start_date=None, end_date=None, overwrite_mode=0, dry_run=False, version=2, verbose=False, create_gzip_mode=-1, delta_mod_t=3600, max_connections=4, confirm=False, report_progress=True, if_match=None):
+    verbose = True
     t_start = time.time()
     if not container:
         container=app_id
