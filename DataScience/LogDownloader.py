@@ -164,6 +164,7 @@ def download_container(app_id, log_dir, container=None, conn_string=None, accoun
                 continue
 
             configFolder = blob.name.split('/data/', 1)[0]
+            print('{0} => {1} - configuration.\n'.format(blob.name, configFolder))
             if(bbs.exists(container, configFolder + "/checkpoint/imitationModeMetrics.json")):
                 if verbose:
                     print('{} - Skip: imitation mode detected for configuration.\n'.format(blob.name))
