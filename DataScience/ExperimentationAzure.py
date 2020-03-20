@@ -44,7 +44,7 @@ if __name__ == '__main__':
     main_parser.add_argument('--summary_json', help="json file containing custom policy commands to run", default='')
     main_parser.add_argument('--run_experimentation', help="run Experimentation.py", action='store_true')
     main_parser.add_argument('--delete_logs_dir', help="delete logs directory before starting to download new logs", action='store_true')
-    main_parser.add_argument('--cleanup', help="delete logs and created files after use", action='store_true')
+    main_parser.add_argument('--cleanup', help="delete logs and created files after use", action='store_false')
     main_parser.add_argument('--get_feature_importance', help="run FeatureImportance.py", action='store_true')
     main_parser.add_argument('--feature_importance_filename', help="name of the output feature importance file", default='featureimportance.json')
     main_parser.add_argument('--feature_importance_raw_filename', help="name of the output feature importance file with raw (unparsed) features", default='featureimportanceraw.json')
